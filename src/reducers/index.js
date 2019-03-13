@@ -4,6 +4,7 @@ const initialState = {
   count: 0
 }
 
+
 // Our reducer that handles our two action cases:
 // increment and decrement. It receives the state
 // of our redux store, along with an action created
@@ -12,8 +13,15 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
-    // Fill in the body of this case
+      return {
+        ...state,
+        count: state.count + action.payload
+      }
     case DECREMENT:
+    return {
+      ...state,
+      count: state.count - action.payload
+    }
     // Fill in the body of this case
     default:
       return state;
